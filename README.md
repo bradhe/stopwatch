@@ -22,7 +22,7 @@ func main() {
 	// Do some work.
 
 	watch := stopwatch.Stop(start)
-	fmt.Printf("Milliseconds elappsed: %v\n", watch.Milliseconds())
+	fmt.Printf("Milliseconds elapsed: %v\n", watch.Milliseconds())
 }
 ```
 
