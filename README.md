@@ -1,34 +1,30 @@
-# StopWatch
+# stopwatch
 
-A really, really simple package for timing bits of code. The intention is to
-provide a simple, light-weight library for benchmarking specific bits of your
-code when need be.
+A simply package for timing your code. The intention is to provide a simple,
+light-weight library for benchmarking specific bits of your code when need be.
 
 ## Example
-
-Pretty straight forward.
 
 ```go
 package main
 
 import (
-	"github.com/bradhe/stopwatch"
-	"fmt"
+  "fmt"
+
+  "github.com/bradhe/stopwatch"
 )
 
 func main() {
-	start := stopwatch.Start()
+  start := stopwatch.Start()
 
-	// Do some work.
+  // Do some work.
 
-	watch := stopwatch.Stop(start)
-	fmt.Printf("Milliseconds elapsed: %v\n", watch.Milliseconds())
+  watch.Stop()
+  fmt.Printf("Milliseconds elapsed: %v\n", watch.Milliseconds())
 }
 ```
 
 ## Contributing
-
-Really? You want to contribute? Well, okay.
 
 1. Fork and fix/implement in a branch.
 1. Make sure tests pass.

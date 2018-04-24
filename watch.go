@@ -5,12 +5,15 @@ import (
 	"time"
 )
 
+// Function prototype for timers.
+type TimerFunc func(Watch)
+
 type Watch interface {
 	fmt.Stringer
 
 	// Timer calls a callback with the currently-measured time. This is useful for
 	// deferring out of a function.
-	Timer(fn func(Watch))
+	Timer(fn TimerFunc)
 
 	// Stops the watch based on the current wall-clock time.
 	Stop() Watch
@@ -44,7 +47,7 @@ type watch struct {
 
 // Timer calls a callback with the currently-measured time. This is useful for
 // deferring out of a function.
-func (s *watch) Timer(fn func(Watch)) {
+func (s *watch) Timer(fn TimerFunc) {
 	fn(s.Stop())
 }
 
