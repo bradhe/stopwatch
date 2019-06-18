@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-  start := stopwatch.Start()
+  watch := stopwatch.Start()
 
   // Do some work.
 
